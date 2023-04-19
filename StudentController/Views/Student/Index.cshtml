@@ -1,0 +1,17 @@
+﻿@using StudentController.Models;
+
+<h2 style="color: tomato">STUDENTS:</h2>
+<ul style="list-style: none"> 
+    @foreach(Student item in ViewBag.Students)
+    {
+        <li style="margin-bottom: 30px"><a style="text-decoration: none" href="@Url.Action("Details", "Student", new { id = item.Id})">@item.Id - @item.FullName</a></li>
+    }
+</ul>
+
+<h2 style="color: lime">GROUPS:</h2>
+<ul>
+    @foreach(Group item in ViewBag.Groups)
+    {
+        <li>@item.Id - @item.Name</li>  
+    }
+</ul>
